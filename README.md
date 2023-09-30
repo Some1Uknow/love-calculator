@@ -1,5 +1,7 @@
 # Love Calculator
 
+ https://some1uknow.github.io/love-calculator/
+
 ## Overview
 
 The Love Calculator is a simple web application that allows users to check the compatibility of two people's names and receive a love percentage along with a fun love-related quote. This project demonstrates basic JavaScript, HTML, and CSS skills for web development.
