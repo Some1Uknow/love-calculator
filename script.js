@@ -2,6 +2,13 @@ var p1 = document.querySelector("#p1");
 var p2 = document.querySelector("#p2");
 
 document.querySelector(".btn1").addEventListener("click", function () {
+    var p1Value = p1.value.trim(); // Trim to remove leading/trailing spaces
+    var p2Value = p2.value.trim();
+
+    if (p1Value === "" || p2Value === "") {
+        alert("Please enter both names before calculating love percentage.");
+        return;
+    }
     var a = Math.floor(Math.random() * 100);
     var b = "";
 
