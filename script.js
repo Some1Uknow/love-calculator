@@ -4,7 +4,7 @@ var p2 = document.querySelector("#p2");
 document.querySelector(".btn1").addEventListener("click", function () {
     var a = Math.floor(Math.random() * 100);
     var b = "";
-    
+
     if (a <= 30) {
         b = "Love is like a pizza. You have to wait for it to arrive, and sometimes it's delivered to the wrong address....  :(";
     } else if (a > 30 && a <= 50) {
@@ -18,12 +18,27 @@ document.querySelector(".btn1").addEventListener("click", function () {
     var p1Value = p1.value;
     var p2Value = p2.value;
     var c = p1Value + " & " + p2Value + " This is your fate!";
-    
+
+    animateLovePercentage(a);
+
+    function animateLovePercentage(targetPercentage) {
+        var lovePercentage = document.querySelector("#main");
+        var currentPercentage = 0;
+
+        var interval = setInterval(function () {
+            if (currentPercentage >= targetPercentage) {
+                clearInterval(interval);
+            } else {
+                currentPercentage++;
+                lovePercentage.textContent = currentPercentage + "%";
+            }
+        }, 20);
+    }
+
     document.querySelector("h1").textContent = c;
     document.querySelector("#quote").classList.add("resultnumber2");
     document.querySelector("#quote").innerHTML = b;
     document.querySelector("#main").classList.add("resultnumber");
-    document.querySelector("#main").textContent = a + "%";
 });
 
 document.querySelector(".btn2").addEventListener("click", function(){
@@ -54,4 +69,3 @@ document.querySelector(".btn2").addEventListener("click", function(){
         </div>
     `;
 })
-
